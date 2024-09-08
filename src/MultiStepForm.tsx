@@ -8,6 +8,10 @@ import { Box } from '@mui/material';
 import Fade from '@mui/material/Fade';
 import { styled } from '@mui/system';
 import StepConnector from '@mui/material/StepConnector';
+// import Card from '@mui/material/Card';
+// import CardContent from '@mui/material/CardContent';
+// import Typography from '@mui/material/Typography';
+
 
 interface Props extends FormikConfig<FormikValues> {
   children: React.ReactNode;
@@ -24,16 +28,16 @@ const MultiStepForm = ({ children, initialValues, onSubmit }: Props) => {
   const isLastStep = stepNumber === totalSteps - 1;
 
   const next = (values: FormikValues) => {
-    setFadeIn(false); // Trigger fade out before changing steps
+    setFadeIn(false); 
     setTimeout(() => {
       setStepNumber(stepNumber + 1);
       setSnapshot(values);
-      setFadeIn(true); // Fade in next step
+      setFadeIn(true); 
     }, 300);
   };
 
   const previous = (values: FormikValues) => {
-    setFadeIn(false); // Trigger fade out before going back
+    setFadeIn(false); 
     setTimeout(() => {
       setSnapshot(values);
       setStepNumber(stepNumber - 1);
@@ -121,6 +125,7 @@ const MultiStepForm = ({ children, initialValues, onSubmit }: Props) => {
               hasPrevious={stepNumber > 0}
               onBackClick={() => previous(formik.values)}
             />
+            
           </Form>
         )}
       </Formik>

@@ -21,10 +21,10 @@ const FormNavigation = (props: Props) => {
                     onClick={props.onBackClick}
                     sx={{
                         backgroundColor: 'rgba(104, 137, 104, 1)',
-                        color: '#fff', // Optional: set text color to white for better contrast
+                        color: '#fff', 
                         marginRight: 4,
                         '&:hover': {
-                            backgroundColor: 'rgba(77, 175, 78, 0.8)', // Optional: lighter color on hover
+                            backgroundColor: 'rgba(77, 175, 78, 0.8)', 
                         }
                     }}
                     >Back</Button>
@@ -32,11 +32,10 @@ const FormNavigation = (props: Props) => {
 
         <Button 
             sx={{
-                        backgroundColor: 'rgba(77, 175, 78, 1)', // Custom background color
-                        color: '#fff', // Optional: set text color to white for better contrast
-                        marginRight: 4,
+                        backgroundColor: 'rgba(77, 175, 78, 1)', 
+                        color: '#fff', 
                         '&:hover': {
-                            backgroundColor: '#43066C', // Optional: lighter color on hover
+                            backgroundColor: '#43066C', 
                         }
                     }} 
             variant='contained' 

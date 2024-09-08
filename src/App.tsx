@@ -14,6 +14,7 @@ import WardField from './components/WardField';
 import CityField from './components/CityField'; 
 import FormStep from './FormStep'; 
 import { useFormikContext } from 'formik'
+import { Box, Typography } from '@mui/material';
 
 
 const validationSchema = yup.object({
@@ -126,7 +127,9 @@ function App() {
           <img src="/logo.png" alt="Logo" /> 
         </div>
         </header>
-
+        <Box sx={{ padding: 2, textAlign: 'center', fontWeight: 'bold' }}>
+        <Typography variant="h3">Register</Typography>
+      </Box>
         <main className="App-header">
           <div className="Card-header">
           <Card sx={{
@@ -134,7 +137,7 @@ function App() {
             bgcolor: 'rgba(255, 255, 255, 0.95)',
             border: '1px solid gray',
             borderRadius: '10px 10px 10px 10px',
-            boxShadow: 'none', // Remove shadow to match your opacity
+            boxShadow: 'none', 
            }}>
           <CardContent>
             <MultiStepForm initialValues={{
@@ -149,7 +152,7 @@ function App() {
                 alert(JSON.stringify(values, null, 2))
               }}
               >
-                
+                {/* PERSONAL DETAILS FORM*/}
                 <FormStep 
                   stepName='Personal Details' 
                   onSubmit={() => console.log('Step1 Sumbit')}
@@ -197,7 +200,9 @@ function App() {
                     </Grid>
                    
                 </FormStep>
+                {/* END OF PERSONAL DETAILS FORM */}   
 
+                {/* ADDRESS FORM*/}
                 <FormStep
                   stepName="Address"
                   onSubmit={() => console.log('Step2 Submit')}
@@ -223,8 +228,11 @@ function App() {
                       </Grid>
                     </Grid>
                 </FormStep>
+                {/* END OF ADDRESS FORM */}   
+                       
 
 
+                {/* PROFILE */}
                 <FormStep
                   stepName="Profile"
                   onSubmit={() => console.log('Step3 Sumbit')}
@@ -239,7 +247,7 @@ function App() {
                   <ReviewStep />
                   
                 </FormStep>
-
+                {/* END OF PROFILE FORM */}
               
             </MultiStepForm>
             </CardContent>
